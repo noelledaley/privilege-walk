@@ -1,0 +1,52 @@
+import { helper } from "@ember/component/helper";
+
+export function questions() {
+  return [
+    "If your ancestors were forced to come to the USA not by choice, take one step back.",
+    "If your primary ethnic identity is 'American' take one step forward.",
+    "If you were ever called names because of your race, class, ethnicity, gender, or sexual orientation, take one step back.",
+    "If there were people who worked for your family as servants, gardeners, nannies, etc., take one step forward.",
+    "If you were ever ashamed or embarrassed of your clothes, house, car, etc., take one step back.",
+    "If one or both of your parents were 'white collar' professionals:  doctors, lawyers, etc., take one step forward.",
+    "If you were raised in an area where there was prostitution, drug activity, etc., take one step back.",
+    "If you ever tried to change your appearance, mannerisms, or behavior to avoid being judged or ridiculed, take one step back.",
+    "If you studied the culture of your ancestors in elementary school, take one step forward.",
+    "If you went to school speaking a language other than English, take one step back.",
+    "If there were more than 50 books in your house when you grew up, take one step forward.",
+    "If you ever had to skip a meal or were hungry because there was not enough money to buy food when you were growing up, take one step back.",
+    "If you were taken to art galleries or plays by your parents, take one step forward.",
+    "If one of your parents was unemployed or laid off, not by choice, take one step back.",
+    "If you have health insurance take one step forward.",
+    "If you attended private school or summer camp, take one step forward.",
+    "If your family ever had to move because they could not afford the rent, take one step back.",
+    "If you were told that you were beautiful, smart and capable by your parents, take one step forward.",
+    "If you were ever discouraged from academics or jobs because of race, class, ethnicity, gender or sexual orientation, take one step back.",
+    "If you were encouraged to attend college by your parents, take one step forward.",
+    "If you have a disability take one step backward.",
+    "If you were raised in a single parent household, take one step back.",
+    "If your family owned the house where you grew up, take one step forward.",
+    "If you saw members of your race, ethnic group, gender or sexual orientation portrayed on television in degrading roles, take one step back.",
+    "If you own a car take one step forward.",
+    "If you were ever offered a good job because of your association with a friend or family member, take one step forward.",
+    "If you were ever denied employment because of your race, ethnicity, gender or sexual orientation, take one step back.",
+    "If you were paid less, treated less fairly because of race, ethnicity, gender or sexual orientation, take one step back.",
+    "If you were ever accused of cheating or lying because of your race, ethnicity, gender, or sexual orientation, take one step back.",
+    "If you ever inherited money or property, take one step forward.",
+    "If you had to rely primarily on public transportation, take one step back.",
+    "If you attended private school at any point in your life take one step forward.",
+    "If you were ever stopped or questioned by the police because of your race, ethnicity, gender or sexual orientation, take one step back.",
+    "If you were ever afraid of violence because of your race, ethnicity, gender or sexual orientation, take one step back.",
+    "If your parents own their own business take one step forward.",
+    "If you were generally able to avoid places that were dangerous, take one step forward.",
+    "If you were ever uncomfortable about a joke related to your race, ethnicity, gender or sexual orientation but felt unsafe to confront the situation, take one step back.",
+    "If you use a TDD Phone system take one step backward.",
+    "If you were ever the victim of violence related to your race, ethnicity, gender or sexual orientation, take one step back.",
+    "Imagine you are in a relationship, if you can get married in the State of ___ take one step forward.",
+    "If your parents did not grow up in the United States, take one step back.",
+    "If your parents attended college take one step forward.",
+    "If your parents told you that you could be anything you wanted to be, take one step forward.",
+    "If you are able to take a step forward or backward take two steps forward."
+  ];
+}
+
+export default helper(questions);
