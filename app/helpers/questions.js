@@ -1,6 +1,4 @@
-import { helper } from "@ember/component/helper";
-
-export function questions() {
+export default function() {
   return [
     "If your ancestors were forced to come to the USA not by choice, take one step back.",
     "If your primary ethnic identity is 'American' take one step forward.",
@@ -48,5 +46,3 @@ export function questions() {
     "If you are able to take a step forward or backward take two steps forward."
   ];
 }
-
-export default helper(questions);

@@ -1,10 +1,7 @@
-<div class="question-container">
   <h2>Privilege Walk</h2>
   <p>
-    <QuestionItem />
-    <ScoreBar />
+    <QuestionItem @currentIndex={{currentIndex}}/>
+    <button {{action "handleForward"}}>Step forward</button>
+    <button {{action "handleBackward"}}>Step back</button>
+    <ScoreBar @score={{score}} />
   </p>
-  <p>
-    {{score}}
-  </p>
-</div>
