@@ -1,7 +1,7 @@
   <h2>Privilege Walk</h2>
   <p>
     {{#if isDone}}
-      <ResultsPage />
+      <ResultsPage @startOver={{startOver}}/>
     {{else}}
       <QuestionItem @currentIndex={{currentIndex}}/>
       <button {{action "handleForward"}}>Step forward</button>
