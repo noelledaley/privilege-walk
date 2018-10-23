@@ -1,2 +1,11 @@
 @import "app-window";
 @import "score-bar";
+@import "question-container";
+@import "question-item";
+@import "results-page";
+
+button {
+  font-size: 1.25em;
+  border-radius: 3px;
+  margin-left: 12px;
+}

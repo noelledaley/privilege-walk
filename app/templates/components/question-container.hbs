@@ -1,11 +1,12 @@
-  <h2>Privilege Walk</h2>
-  <p>
-    {{#if isDone}}
-      <ResultsPage @startOver={{startOver}}/>
-    {{else}}
-      <QuestionItem @currentIndex={{currentIndex}}/>
+<p>
+  {{#if isDone}}
+    <ResultsPage @startOver={{startOver}}/>
+  {{else}}
+    <QuestionItem @currentIndex={{currentIndex}}/>
+    <div class="answer-buttons">
       <button {{action "handleForward"}}>Step forward</button>
       <button {{action "handleBackward"}}>Step back</button>
-    {{/if}}
-    <ScoreBar @score={{score}} />
-  </p>
+    </div>
+  {{/if}}
+  <ScoreBar @score={{score}} />
+</p>
