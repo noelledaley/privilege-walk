@@ -1,1 +1,7 @@
-<AppWindow />
+<AppWindow @recordUserAnswers={{action "recordUserAnswers"}}/>
+<section>
+  {{#each model as |userAnswers|}}
+    <div>{{userAnswers.question1}}</div>
+    <div>{{userAnswers.timestamp}}</div>
+  {{/each}}
+</section>

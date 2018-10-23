@@ -6,6 +6,7 @@
       <QuestionItem @currentIndex={{currentIndex}}/>
       <button {{action "handleForward"}}>Step forward</button>
       <button {{action "handleBackward"}}>Step back</button>
+      <button {{action recordUserAnswers}}>Create new answer</button>
     {{/if}}
     <ScoreBar @score={{score}} />
   </p>
