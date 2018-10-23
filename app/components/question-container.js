@@ -7,6 +7,7 @@ export default Component.extend({
   isDone: null,
   startOver() {},
   recordAnswer(answer) {
+    this.recordUserAnswers(answer, this.currentIndex);
     this.set("currentIndex", this.currentIndex + 1);
   },
   actions: {
