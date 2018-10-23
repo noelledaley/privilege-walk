@@ -1,7 +1,7 @@
 import Controller from "@ember/controller";
 
 export default Controller.extend({
-  sortProperties: ["timestamp"],
+  sortProperties: "timestamp",
   sortAscending: false,
   actions: {
     recordUserAnswers: function(answer, currentQuestionIndex) {
