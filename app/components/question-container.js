@@ -6,20 +6,24 @@ export default Component.extend({
   isLastQuestion: null,
   isDone: null,
   startOver() {},
+  recordAnswer(answer) {
+    this.recordUserAnswers(answer, this.currentIndex);
+    this.set("currentIndex", this.currentIndex + 1);
+  },
   actions: {
     handleForward: function() {
       if (this.isLastQuestion) {
         this.toggleProperty("isDone");
       }
       this.set("score", this.score + 1);
-      this.set("currentIndex", this.currentIndex + 1);
+      this.recordAnswer(1);
     },
     handleBackward: function() {
       if (this.isLastQuestion) {
         this.toggleProperty("isDone");
       }
       this.set("score", this.score - 1);
-      this.set("currentIndex", this.currentIndex + 1);
+      this.recordAnswer(-1);
     }
   }
 });
