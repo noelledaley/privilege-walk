@@ -17,9 +17,15 @@ export default Component.extend({
   },
   handleSaveAnswers() {
     this.toggleProperty("isDone");
-    const answers = Object.assign({}, this.answers, {
-      timestamp: new Date().getTime()
-    });
+    const answers = Object.assign(
+      {},
+      { answers: this.answers },
+      {
+        timestamp: new Date().getTime(),
+        score: this.score
+      }
+    );
+
     this.saveAnswers(answers);
   },
   actions: {
