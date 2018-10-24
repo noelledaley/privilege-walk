@@ -3,17 +3,25 @@
   You're done!
 </p>
 <p>
-  You took [x] steps forward and [x] steps backwards.
+  You took stepsForward steps forward and "stepsBack" steps back.
 </p>
 <p>
   Learn more about ....<a href="#">link to some kind of educational resource on privilege</a>.
 </p>
 <section>
   <ul>
-    {{#each model as |userAnswers|}}
-    <li>
-
-    </li>
+    {{#each model as |answer|}}
+      <li>{{answer.id}}</li>
+        <ul>
+          <li>
+            Score: {{answer.score}}
+          </li>
+        {{#each answer.answers as |a|}}
+          <li>
+            {{a}}
+          </li>
+        {{/each}}
+      </ul>
     {{/each}}
   </ul>
 </section>
