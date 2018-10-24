@@ -1,6 +1,6 @@
 <p>
   {{#if isDone}}
-    <ResultsPage @startOver={{startOver}}/>
+    <ResultsPage @startOver={{startOver}} @model={{model}}/>
   {{else}}
     <QuestionItem @currentIndex={{currentIndex}}/>
     <div class="answer-buttons">
