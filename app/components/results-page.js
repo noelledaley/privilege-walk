@@ -1,16 +1,16 @@
 import Component from "@ember/component";
 import { computed } from "@ember/object";
-import { inject as service } from "@ember/service";
 
 export default Component.extend({
-  score: null,
-  current: service(),
-  results: computed.alias("current.results"),
-  stepsForward: computed("results", function() {
-    return this.results.answers.filter(a => a === 1).length;
+  classNames: ["results-page"],
+  parentModel: null,
+  score: computed.alias("parentModel.score"),
+  answers: computed.alias("parentModel.answers"),
+  stepsForward: computed("answers", function() {
+    return this.answers.filter(a => a === 1).length;
   }),
-  stepsBack: computed("results", function() {
-    return this.results.answers.filter(a => a === -1).length;
+  stepsBack: computed("parentModel.answers", function() {
+    return this.answers.filter(a => a === -1).length;
   }),
   percentage: computed("results", function() {
     const allScores = this.model.map(i => i.score);
