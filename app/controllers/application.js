@@ -9,7 +9,7 @@ export default Controller.extend({
   actions: {
     saveAnswers: function(answers) {
       const newAnswers = this.store.createRecord("user-answers", answers);
-      window.localStorage.setItem("privilegeWalkUserId", JSON.stringify(newAnswers.id));
+      window.localStorage.setItem("privilegeWalkUserId", newAnswers.id);
       newAnswers.save().then(() => this.saveSuccess());
     }
   }

@@ -42,6 +42,10 @@ export default Component.extend({
       if (this.isLastQuestion) {
         this.handleSaveAnswers();
       }
-    }
+    },
+    handleStartOver() {
+      this.set("answers", [])
+      this.startOver()
+    },
   }
 });
