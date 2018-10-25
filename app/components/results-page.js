@@ -3,17 +3,16 @@ import { computed } from "@ember/object";
 
 export default Component.extend({
   parentModel: null,
-  score: null,
-  answers: computed.alias("model.answers"),
+  score: computed.alias("parentModel.score"),
+  answers: computed.alias("parentModel.answers"),
   stepsForward: computed("answers", function() {
-    debugger
     return this.answers.filter(a => a === 1).length;
   }),
-  stepsBack: computed("answers", function() {
+  stepsBack: computed("parentModel.answers", function() {
     return this.answers.filter(a => a === -1).length;
   }),
   percentage: computed("results", function() {
-    const allScores = this.parentModel.map(i => i.score);
+    const allScores = this.model.map(i => i.score);
     const sumScores = allScores.reduce((prev, current) => (current += prev));
     const avg = sumScores / allScores.length;
     const percentage = ((this.score / avg) * 100).toFixed(0);

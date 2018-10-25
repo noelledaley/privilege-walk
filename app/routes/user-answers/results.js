@@ -4,7 +4,10 @@ export default Route.extend({
   model: function() {
     return this.store.findAll("user-answers");
   },
-  parentModel: function() {
-    this.modelFor("user-answers")
-  }
+
+  setupController(controller, model) {
+    controller.set('parentModel', this.modelFor('user-answers'))
+    this._super(controller, model);
+  },
+
 });

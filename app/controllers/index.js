@@ -4,13 +4,14 @@ export default Controller.extend({
   sortProperties: "timestamp",
   sortAscending: false,
   saveSuccess() {
+    this.send("doRefresh");
     this.transitionToRoute("user-answers.results");
   },
   actions: {
     saveAnswers: function(answers) {
       const userId = window.localStorage.getItem("privilegeWalkUserId");
       if (userId) {
-        return
+        this.saveSuccess();
       }
       const newAnswers = this.store.createRecord("user-answers", answers);
       window.localStorage.setItem("privilegeWalkUserId", newAnswers.id);
