@@ -5,25 +5,47 @@ export default Component.extend({
   currentIndex: null,
   isLastQuestion: null,
   isDone: null,
+  answers: null,
   startOver() {},
+  init() {
+    this._super(...arguments);
+    this.set("answers", []);
+  },
   recordAnswer(answer) {
-    this.recordUserAnswers(answer, this.currentIndex);
+    this.answers.push(answer);
     this.set("currentIndex", this.currentIndex + 1);
+  },
+  handleSaveAnswers() {
+    this.toggleProperty("isDone");
+    const answers = Object.assign(
+      {},
+      { answers: this.answers },
+      {
+        timestamp: new Date().getTime(),
+        score: this.score
+      }
+    );
+
+    this.saveAnswers(answers);
   },
   actions: {
     handleForward: function() {
-      if (this.isLastQuestion) {
-        this.toggleProperty("isDone");
-      }
       this.set("score", this.score + 1);
       this.recordAnswer(1);
+      if (this.isLastQuestion) {
+        this.handleSaveAnswers();
+      }
     },
     handleBackward: function() {
-      if (this.isLastQuestion) {
-        this.toggleProperty("isDone");
-      }
       this.set("score", this.score - 1);
       this.recordAnswer(-1);
+      if (this.isLastQuestion) {
+        this.handleSaveAnswers();
+      }
+    },
+    handleStartOver() {
+      this.set("answers", []);
+      this.startOver();
     }
   }
 });

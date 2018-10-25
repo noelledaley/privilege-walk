@@ -2,4 +2,30 @@
 <p>
   You're done!
 </p>
-<button {{action startOver}} class="start-over">Start over</button>
+<p>
+  You took {{pluralize stepsForward "step"}} forward and {{pluralize stepsBack "step"}} back.
+</p>
+<p>
+  You have {{percentage}} privilege than the average respondent.
+</p>
+<p>
+  Learn more about ....<a href="#">link to some kind of educational resource on privilege</a>.
+</p>
+<section>
+  <ul>
+    {{#each model as |answer|}}
+      <li>{{answer.id}}</li>
+        <ul>
+          <li>
+            Score: {{answer.score}}
+          </li>
+        {{#each answer.answers as |a|}}
+          <li>
+            {{a}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/each}}
+  </ul>
+</section>
+<button {{action handleStartOver}} class="start-over">Start over</button>
