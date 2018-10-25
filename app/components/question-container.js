@@ -44,8 +44,8 @@ export default Component.extend({
       }
     },
     handleStartOver() {
-      this.set("answers", [])
-      this.startOver()
-    },
+      this.set("answers", []);
+      this.startOver();
+    }
   }
 });

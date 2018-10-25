@@ -5,12 +5,12 @@ import { inject as service } from "@ember/service";
 export default Component.extend({
   score: null,
   current: service(),
-  results: computed.alias('current.results'),
+  results: computed.alias("current.results"),
   stepsForward: computed("results", function() {
     return this.results.answers.filter(a => a === 1).length;
   }),
   stepsBack: computed("results", function() {
-    return this.answers.filter(a => a === -1).length;
+    return this.results.answers.filter(a => a === -1).length;
   }),
   percentage: computed("results", function() {
     const allScores = this.model.map(i => i.score);

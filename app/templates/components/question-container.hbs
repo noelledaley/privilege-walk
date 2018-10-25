@@ -1,7 +1,6 @@
 <p>
   {{#if isDone}}
     <ResultsPage @handleStartOver={{action "handleStartOver"}} @model={{model}}
-    @answers={{answers}}
     @score={{score}}/>
   {{else}}
     <QuestionItem @currentIndex={{currentIndex}}/>
