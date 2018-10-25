@@ -12,8 +12,8 @@ export default Component.extend({
   stepsBack: computed("results", function() {
     return this.answers.filter(a => a === -1).length;
   }),
-  percentage: computed("answers", function() {
-    const allScores = this.model.content.map(i => i._record.score);
+  percentage: computed("results", function() {
+    const allScores = this.model.map(i => i.score);
     const sumScores = allScores.reduce((prev, current) => (current += prev));
     const avg = sumScores / allScores.length;
     const percentage = ((this.score / avg) * 100).toFixed(0);
