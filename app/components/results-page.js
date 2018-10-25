@@ -2,6 +2,7 @@ import Component from "@ember/component";
 import { computed } from "@ember/object";
 
 export default Component.extend({
+  classNames: ["results-page"],
   parentModel: null,
   score: computed.alias("parentModel.score"),
   answers: computed.alias("parentModel.answers"),
