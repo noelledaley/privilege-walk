@@ -1,11 +1,22 @@
-@import "app-window";
+@import "milligram";
+@import "app-container";
 @import "score-bar";
 @import "question-container";
 @import "question-item";
 @import "results-page";
+@import "app-footer";
 
 button {
-  font-size: 1.25em;
-  border-radius: 3px;
+  background: #5c4ee5;
+  border-color: #5c4ee5;
   margin-left: 12px;
+}
+
+button:hover {
+  background: #606c76;
+  border-color: #606c76;
+}
+
+a {
+  color: #5c4ee5;
 }

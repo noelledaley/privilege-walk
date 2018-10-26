@@ -1,16 +1,23 @@
 <h2>Results</h2>
-<p>
-  You took {{pluralize stepsForward "step"}} forward and {{pluralize stepsBack "step"}} back for a total score of {{parentModel.score}}. The higher your score, the more privilege you are afforded.
-</p>
-<ScoreBar @isUser={{true}} @score={{parentModel.score}} />
-<p>
-  Learn more about ....<a href="#">link to some kind of educational resource on privilege</a>.
-</p>
-<p>
-  The average score is {{averageScore}}. Here's how your score compares with others:
-</p>
-<section class="all-scores">
+<section>
+  <p>
+    You took {{pluralize stepsForward "step"}} forward and {{pluralize stepsBack "step"}} back for a total score of <b>{{parentModel.score}}</b>. The higher your score, the more privilege you are afforded.
+  </p>
+  <ScoreBar @score={{parentModel.score}} />
+  <p>
+    The average score is <b>{{averageScore}}</b>.
+  </p>
+  <p>
+    Here's how your score compares with others. Positive scores are shown in green while negative scores are shown in red.
+  </p>
+</section>
+<section>
   {{#each model as |answer|}}
     <ScoreBar @score={{answer.score}} />
   {{/each}}
+</section>
+<section>
+  <p>
+    A privilege walk is merely one of many tools to examine one's privilege in society. Learn more about the <a href="https://www.albany.edu/ssw/efc/pdf/Module%205_1_Privilege%20Walk%20Activity.pdf">classroom activity</a> and some of the <a href="https://medium.com/@MegB/why-i-dont-won-t-facilitate-privilege-walks-anymore-and-what-i-do-instead-380c95490e10">criticisms</a> of privilege walks.
+  </p>
 </section>

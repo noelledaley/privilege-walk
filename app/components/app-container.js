@@ -3,7 +3,7 @@ import { computed } from "@ember/object";
 import questions from "../helpers/questions";
 
 export default Component.extend({
-  classNames: ["app-window"],
+  classNames: ["app-container"],
   hasBegun: false,
   score: 0,
   currentIndex: 0,

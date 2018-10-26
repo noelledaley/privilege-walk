@@ -1,0 +1,22 @@
+  <h1 class="app-header">Privilege Walk‍</h1>
+  {{#unless hasBegun}}
+  <p>
+    A Privilege Walk demonstrates the ways society privileges certain individuals over others.
+  </p>
+  <p>
+    On the following pages you will be asked a question. Based on your life experience, you can click to either take a step forwards or backwards. At the end you'll receive a score which you can use to compare your privilege with others.
+  </p>
+  <div>
+    <button {{action "handleBegin"}} class="begin-button">Let's begin!</button>
+  </div>
+  {{else}}
+  <QuestionContainer
+  @currentIndex={{currentIndex}}
+  @score={{score}}
+  @isLastQuestion={{isLastQuestion}}
+  @isDone={{isDone}}
+  @startOver={{action "startOver"}}
+  @saveAnswers={{action saveAnswers}}
+  @model={{model}}
+  />
+  {{/unless}}
