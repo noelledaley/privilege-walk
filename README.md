@@ -10,6 +10,7 @@ You will need the following things properly installed on your computer.
 - [Node.js](https://nodejs.org/) (with npm)
 - [Ember CLI](https://ember-cli.com/)
 - [Google Chrome](https://google.com/chrome/)
+- A [Google Firebase account](https://console.firebase.google.com/)
 
 ## Installation
 
@@ -18,6 +19,8 @@ You will need the following things properly installed on your computer.
 - `npm install`
 
 ## Running / Development
+
+Before running the app you'll need to create a `.env` file to store your Google Firebase `apiKey`, `authDomain`, `databaseURL`, and `storageBucket`.
 
 - `ember serve`
 - Visit the app at [http://localhost:4200](http://localhost:4200).
