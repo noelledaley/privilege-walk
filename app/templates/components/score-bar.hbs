@@ -3,5 +3,5 @@
   min="-21"
   max="20"
   value={{score}}
-  class="score {{if isPositive 'positive' 'negative'}}"
+  class="score {{unless isUser (if isPositive 'positive' 'negative')}}"
   disabled />

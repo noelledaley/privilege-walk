@@ -2,7 +2,7 @@
 <p>
   You took {{pluralize stepsForward "step"}} forward and {{pluralize stepsBack "step"}} back for a total score of {{parentModel.score}}. The higher your score, the more privilege you are afforded.
 </p>
-<ScoreBar @score={{parentModel.score}} />
+<ScoreBar @isUser={{true}} @score={{parentModel.score}} />
 <p>
   Learn more about ....<a href="#">link to some kind of educational resource on privilege</a>.
 </p>
@@ -11,6 +11,6 @@
 </p>
 <section class="all-scores">
   {{#each model as |answer|}}
-    <ScoreBar @score={{answer.score}}/>
+    <ScoreBar @score={{answer.score}} />
   {{/each}}
 </section>
