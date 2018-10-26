@@ -3,11 +3,11 @@
 module.exports = function(environment) {
   let ENV = {
     firebase: {
-      apiKey: "AIzaSyCNFtXq3Biac_KebhkXU1NY8WfJEa7iH9c",
-      authDomain: "privilege-walk-224dd.firebaseapp.com",
-      databaseURL: "https://privilege-walk-224dd.firebaseio.com",
-      projectId: "privilege-walk-224dd",
-      storageBucket: "privilege-walk-224dd.appspot.com"
+      apiKey: process.env.API_KEY,
+      authDomain: process.env.AUTH_DOMAIN,
+      databaseURL: process.env.DATABASE_URL,
+      projectId: process.env.PROJECT_ID,
+      storageBucket: process.env.STORAGE_BUCKET
     },
     modulePrefix: "privilege-walk",
     environment,
@@ -33,7 +33,7 @@ module.exports = function(environment) {
   if (environment === "development") {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    ENV.APP.LOG_TRANSITIONS = true;
+    // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
