@@ -1,31 +1,16 @@
 <h2>Results</h2>
 <p>
-  You're done!
+  You took {{pluralize stepsForward "step"}} forward and {{pluralize stepsBack "step"}} back for a total score of {{parentModel.score}}. The higher your score, the more privilege you are afforded.
 </p>
-<p>
-  You took {{pluralize stepsForward "step"}} forward and {{pluralize stepsBack "step"}} back.
-</p>
-<p>
-  You have {{percentage}} privilege than the average respondent.
-</p>
+<ScoreBar @score={{parentModel.score}} />
 <p>
   Learn more about ....<a href="#">link to some kind of educational resource on privilege</a>.
 </p>
-<input type="range" min="-21" max="20" value={{parentModel.score}} disabled class="score"/>
-<section>
-  <ul>
-    {{#each model as |answer|}}
-      <li>{{answer.id}}</li>
-        <ul>
-          <li>
-            Score: {{answer.score}}
-          </li>
-        {{#each answer.answers as |a|}}
-          <li>
-            {{a}}
-          </li>
-        {{/each}}
-      </ul>
-    {{/each}}
-  </ul>
+<p>
+  The average score is {{averageScore}}. Here's how your score compares with others:
+</p>
+<section class="all-scores">
+  {{#each model as |answer|}}
+    <ScoreBar @score={{answer.score}}/>
+  {{/each}}
 </section>
