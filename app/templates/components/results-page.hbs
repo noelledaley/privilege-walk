@@ -1,14 +1,17 @@
 <h2>Results</h2>
 <section>
   <p>
-    You took {{pluralize stepsForward "step"}} forward and {{pluralize stepsBack "step"}} back for a total score of <b>{{parentModel.score}}</b>. The higher your score, the more privilege you are afforded.
+    You took {{pluralize stepsForward "step"}} forward and {{pluralize stepsBack "step"}} back for a total score of <b>{{parentModel.score}}</b>.
+    <br/>
+    The higher your score, the more privilege you are afforded.
   </p>
   <ScoreBar @score={{parentModel.score}} />
+  <h4>How Your Score Compares With Others:</h4>
   <p>
     The average score is <b>{{averageScore}}</b>.
   </p>
   <p>
-    Here's how your score compares with others. Positive scores are shown in green while negative scores are shown in red.
+    Below are scores from other respondents. Positive scores are shown in green while negative scores are shown in red.
   </p>
 </section>
 <section>
